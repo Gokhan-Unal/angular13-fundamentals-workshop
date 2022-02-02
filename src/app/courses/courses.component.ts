@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.scss']
+  styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent implements OnInit {
   courses = [
@@ -12,13 +12,27 @@ export class CoursesComponent implements OnInit {
       title: 'Angular 13 Fundamentals',
       description: 'Learn the fundamentals of Angular 13',
       percentComplete: 26,
-      favorite: true
-    }
+      favorite: true,
+    },
+    {
+      id: 2,
+      title: 'Angular 13 Advanced',
+      description: 'Learn advanced topics of Angular 13',
+      percentComplete: 45,
+      favorite: false,
+    },
   ];
 
-  constructor() { }
+  selectedCourse = null;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  selectCourse(course) {
+    this.selectedCourse = course;
   }
-
+  deleteCourse(id) {
+    this.courses = this.courses.filter((course) => course.id !== id);
+  }
 }
