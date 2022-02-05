@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from '../common/models/course';
+
+const emptyCourse: Course = {
+  id: null,
+  title: '',
+  description: '',
+  percentComplete: 0,
+  favorite: false,
+};
 
 @Component({
   selector: 'app-courses',
@@ -23,16 +32,26 @@ export class CoursesComponent implements OnInit {
     },
   ];
 
-  selectedCourse = null;
+  selectedCourse = emptyCourse;
+  originalTitle = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
   selectCourse(course) {
-    this.selectedCourse = course;
+    this.selectedCourse = { ...course };
+    this.originalTitle = course.title;
   }
   deleteCourse(id) {
     this.courses = this.courses.filter((course) => course.id !== id);
+  }
+
+  saveCourse(course) {
+    console.log('Saving course', course);
+  }
+
+  reset() {
+    this.selectedCourse = { ...emptyCourse };
   }
 }
