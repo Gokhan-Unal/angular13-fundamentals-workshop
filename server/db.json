@@ -10,8 +10,8 @@
     {
       "id": 2,
       "title": "Angular 12",
-      "description": "Deprecated  course",
-      "percentComplete": 25,
+      "description": "Deprecated  course2",
+      "percentComplete": 66,
       "favorite": false
     }
   ]
