@@ -5,7 +5,7 @@
     <mat-card-title>
       <span *ngIf="currentCourse?.id; else elseBlock">
         <!-- {{ currentCourse.title | titlecase }} -->
-        {{ currentCourse.title | titlecase }}
+        {{ originalTitle | titlecase }}
       </span>
       <ng-template #elseBlock>
         Select a Course

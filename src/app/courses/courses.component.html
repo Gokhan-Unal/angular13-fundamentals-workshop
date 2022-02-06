@@ -5,7 +5,7 @@
         </app-courses-list>
     </div>
     <div class="course-details">
-        <app-course-details [currentCourse]="selectedCourse" (cancelled)="reset()" (saved)="saveCourse($event)">
+        <app-course-details [course]="selectedCourse" (cancelled)="reset()" (saved)="saveCourse($event)">
         </app-course-details>
     </div>
 </div>
